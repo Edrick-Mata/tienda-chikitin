@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Iniciar sesión · Tiendachikitin</title>
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body class="fondo" data-page="login">
+
+<header class="nav">
+    <button class="icon-btn only-mobile" id="btnMenu" aria-label="Abrir menú">
+        <svg class="ic" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+
+    <a class="brand nav-centro" href="registro.html" aria-label="Tiendachikitin">
+        <svg class="logo" viewBox="0 0 40 40"><circle cx="20" cy="20" r="18" fill="#f79239"/><path d="M11 15l9-5 9 5-9 5-9-5zM11 15v10l9 5 9-5V15M20 20v10" fill="none" stroke="#fff" stroke-width="2.4" stroke-linejoin="round"/></svg>
+        <span class="brand-text only-desktop">Tienda<b>chikitin</b></span>
+    </a>
+
+    <nav class="nav-links only-desktop" style="margin-right:auto;margin-left:16px">
+        <a href="registro.html">Crear cuenta</a>
+        <a href="login.html" class="activo">Iniciar sesión</a>
+    </nav>
+
+    <div class="nav-right">
+        <a class="icon-btn" href="registro.html" aria-label="Crear cuenta">
+            <svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 016-6h4a6 6 0 016 6v1"/></svg>
+        </a>
+    </div>
+</header>
+
+<div class="drawer" id="drawer">
+    <div class="drawer-top">
+        <svg class="logo" viewBox="0 0 40 40" width="44" height="44"><circle cx="20" cy="20" r="18" fill="#f79239"/><path d="M11 15l9-5 9 5-9 5-9-5zM11 15v10l9 5 9-5V15M20 20v10" fill="none" stroke="#fff" stroke-width="2.4" stroke-linejoin="round"/></svg>
+        <button class="icon-btn" id="btnCerrarMenu" aria-label="Cerrar menú">
+            <svg class="ic" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+    </div>
+    <a class="drawer-item" href="registro.html"><span>Crear cuenta</span><svg class="ic" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></a>
+    <a class="drawer-item activo" href="login.html"><span>Iniciar sesión</span><svg class="ic" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></a>
+</div>
+
+<main class="auth">
+    <h1>Inicia sesión en <span>Tiendachikitin</span></h1>
+    <p class="sub">Necesitas <b>iniciar sesión</b> para continuar.</p>
+
+    <div id="mensaje"></div>
+
+    <form id="form" autocomplete="on" novalidate>
+        <div class="campo">
+            <input id="usuario" name="username" placeholder="Nombre de usuario o correo" autocomplete="username"
+                   autocapitalize="none" required>
+        </div>
+        <div class="campo pass-wrap">
+            <input id="contrasena" name="password" type="password" placeholder="Contraseña"
+                   autocomplete="current-password" required>
+            <button type="button" class="ojo" id="ojo" aria-label="Mostrar u ocultar contraseña">
+                <svg class="ic" viewBox="0 0 24 24"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/><circle cx="12" cy="12" r="3"/></svg>
+            </button>
+        </div>
+        <button class="btn" type="submit" id="enviar">Iniciar sesión</button>
+    </form>
+
+    <div class="cambio">¿Necesitas una cuenta? <a href="registro.html">Regístrate aquí</a></div>
+    <div class="cambio" style="margin-top:8px"><a href="recuperar.html">¿Olvidaste tu contraseña?</a></div>
+
+    <div class="pie-auth">Tiendachikitin · Punto de venta e inventario corriendo la chikitin engine</div>
+</main>
+
+<script src="config.js"></script>
+<script src="correo.js"></script>
+<script src="db.js"></script>
+<script src="auth.js"></script>
+</body>
+</html>

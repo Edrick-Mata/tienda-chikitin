@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tiendachikitin</title>
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body class="fondo">
+
+<header class="nav" id="nav">
+    <button class="icon-btn only-mobile" id="btnMenu" aria-label="Abrir menú">
+        <svg class="ic" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+
+    <a class="brand nav-centro" href="#" aria-label="Tiendachikitin">
+        <svg class="logo" viewBox="0 0 40 40"><circle cx="20" cy="20" r="18" fill="#f79239"/><path d="M11 15l9-5 9 5-9 5-9-5zM11 15v10l9 5 9-5V15M20 20v10" fill="none" stroke="#fff" stroke-width="2.4" stroke-linejoin="round"/></svg>
+        <span class="brand-text only-desktop">Tienda<b>chikitin</b></span>
+    </a>
+
+    <nav class="nav-links only-desktop" id="navLinks" style="margin-right:auto;margin-left:16px"></nav>
+
+    <form class="nav-search" id="formBusqueda" autocomplete="off">
+        <svg class="ic" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        <input id="q" type="search" placeholder="Buscar producto por ID o nombre">
+        <kbd class="only-desktop">/</kbd>
+    </form>
+
+    <div class="nav-right">
+        <button class="icon-btn only-mobile" id="btnBuscar" aria-label="Buscar">
+            <svg class="ic" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        </button>
+        <div class="usuario-wrap">
+            <button class="icon-btn" id="btnUsuario" aria-label="Cuenta"></button>
+            <div class="menu-usuario oculto" id="menuUsuario"></div>
+        </div>
+    </div>
+</header>
+
+<div class="drawer" id="drawer">
+    <div class="drawer-top">
+        <svg class="logo" viewBox="0 0 40 40" width="44" height="44"><circle cx="20" cy="20" r="18" fill="#f79239"/><path d="M11 15l9-5 9 5-9 5-9-5zM11 15v10l9 5 9-5V15M20 20v10" fill="none" stroke="#fff" stroke-width="2.4" stroke-linejoin="round"/></svg>
+        <button class="icon-btn" id="btnCerrarMenu" aria-label="Cerrar menú">
+            <svg class="ic" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+    </div>
+    <div class="drawer-actual" id="drawerActual"></div>
+    <div id="drawerLista"></div>
+    <div class="drawer-pie">
+        <p class="muted" id="drawerUsuario" style="margin-top:0"></p>
+        <button class="btn-danger" style="width:100%" id="btnSalirMovil">Cerrar sesión</button>
+    </div>
+</div>
+
+<div id="avisoCorreo"></div>
+<main class="main" id="vista"></main>
+
+<dialog id="modal"></dialog>
+<div class="toasts" id="toasts"></div>
+
+<script src="config.js"></script>
+<script src="correo.js"></script>
+<script src="db.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

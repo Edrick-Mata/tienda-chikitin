@@ -1,0 +1,68 @@
+/* Chatbot Chiki: botón flotante y panel */
+.cb-fab {
+    position: fixed; right: 18px; bottom: 18px; z-index: 150;
+    width: 58px; height: 58px; border-radius: 50%;
+    background: var(--accent); color: var(--accent-ink);
+    border: none; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 6px 20px #000a;
+    transition: background .15s ease, transform .15s ease;
+}
+.cb-fab:hover { background: var(--accent-2); transform: scale(1.05); }
+.cb-fab svg.ic { width: 28px; height: 28px; }
+.drawer.abierto ~ .cb-fab,
+.drawer.abierto ~ .cb-panel { display: none; }
+
+.cb-panel {
+    position: fixed; right: 18px; bottom: 88px; z-index: 150;
+    width: min(380px, calc(100vw - 24px));
+    height: min(560px, calc(100vh - 110px));
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; box-shadow: 0 14px 40px #000c;
+    display: flex; flex-direction: column; overflow: hidden;
+}
+.cb-panel.oculto { display: none !important; }
+
+.cb-head {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 10px 8px 10px 16px; background: var(--nav);
+    border-bottom: 1px solid var(--border);
+}
+.cb-head strong { display: block; font-size: 16px; color: var(--accent); }
+.cb-head small { color: var(--muted); font-size: 12px; }
+.cb-head-btns { display: flex; gap: 2px; }
+.cb-head .icon-btn { width: 34px; height: 34px; font-size: 18px; }
+.cb-head .icon-btn svg.ic { width: 20px; height: 20px; }
+
+.cb-msgs {
+    flex: 1; overflow-y: auto; padding: 14px;
+    display: flex; flex-direction: column; gap: 10px;
+}
+.cb-msg {
+    max-width: 88%; padding: 9px 12px; border-radius: 12px;
+    font-size: 14px; line-height: 1.4; white-space: pre-wrap; word-wrap: break-word;
+}
+.cb-bot { align-self: flex-start; background: var(--surface-2); border-bottom-left-radius: 3px; }
+.cb-user { align-self: flex-end; background: var(--accent); color: var(--accent-ink); border-bottom-right-radius: 3px; }
+.cb-error { background: rgba(229, 72, 77, .15); border: 1px solid var(--danger); color: #ff9da0; }
+.cb-acciones { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; white-space: normal; }
+
+.cb-chips { display: flex; gap: 6px; padding: 0 12px 8px; overflow-x: auto; }
+.cb-chip {
+    flex: none; background: transparent; color: var(--text);
+    border: 1px solid var(--border); border-radius: 999px;
+    padding: 5px 12px; font: inherit; font-size: 13px; cursor: pointer;
+}
+.cb-chip:hover { border-color: var(--accent); color: var(--accent); }
+
+.cb-form { display: flex; gap: 8px; padding: 10px 12px; border-top: 1px solid var(--border); }
+.cb-form input { flex: 1; min-width: 0; }
+.cb-form .btn { padding: 8px 14px; }
+
+@media (max-width: 899px) {
+    .cb-fab { right: 14px; bottom: 14px; }
+    .cb-panel { right: 12px; bottom: 82px; }
+}
+@media print {
+    .cb-fab, .cb-panel { display: none !important; }
+}
